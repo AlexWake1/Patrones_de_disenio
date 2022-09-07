@@ -14,17 +14,17 @@ namespace Patrones_de_Diseño.Comparables
 		public void Robar()
 		{
 			accion=1;
-			Console.WriteLine("El/la vendedor/a: " + this.Nombre + ", está robando.");
+			Console.WriteLine("El/la vendedor/a: " + this.Nombre + ", está robando.\n");
 		}
 		public void Descansar()
 		{
 			accion = 2;
-			Console.WriteLine("El/la vendedor/a: " + this.Nombre + ", está descansando.");
+			Console.WriteLine("El/la vendedor/a: " + this.Nombre + ", está descansando.\n");
 		}
 		public void Molestarcompañeros()
 		{
 			accion = 3;
-			Console.WriteLine("El/la vendedor/a: " + this.Nombre + ", está molestando a sus compañeros.");
+			Console.WriteLine("El/la vendedor/a: " + this.Nombre + ", está molestando a sus compañeros.\n");
 		}
 
 		public override void Venta(int monto)

@@ -1,11 +1,11 @@
 ﻿using Patrones_de_Diseño.Comparables;
-using System;
+using Patrones_de_Diseño.Metodos_Auxiliares;
 
 namespace Patrones_de_Diseño.Factory_method
 {
     abstract class Fabrica : IFabricaDeComprarables
     {
-        protected static GeneradorDeDatosAleatorios aleatorio = new GeneradorDeDatosAleatorios();
+        //protected static GeneradorDeDatosAleatorios aleatorio = new GeneradorDeDatosAleatorios();
         public static iComparable CrearComparable(int quecomparable)
         {
             Fabrica? fabrica = null;
@@ -40,6 +40,8 @@ namespace Patrones_de_Diseño.Factory_method
                     break;
                 case 10:
                     fabrica = new FabricaProxyAlumnoMuyEstudioso();
+                    break;
+                default:
                     break;
             }
             return fabrica.CrearComparable();
@@ -84,7 +86,7 @@ namespace Patrones_de_Diseño.Factory_method
         }
         public iComparable CrearComparableAleatorio()
         {
-            return Fabrica.CrearComparable(aleatorio.NumeroAleatorio(1, 10));
+            return Fabrica.CrearComparable(GeneradorDeDatosAleatorios.NumeroAleatorio(1, 10));
         }
         public abstract iComparable CrearComparable();
         public abstract iComparable CrearComparablePorTeclado();

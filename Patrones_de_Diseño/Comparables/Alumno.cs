@@ -1,7 +1,6 @@
 ﻿using Patrones_de_Diseño.Decorator;
-using Patrones_de_Diseño.Factory_method;
+using Patrones_de_Diseño.Metodos_Auxiliares;
 using Patrones_de_Diseño.Strategy;
-using System;
 
 namespace Patrones_de_Diseño.Comparables
 {
@@ -15,11 +14,11 @@ namespace Patrones_de_Diseño.Comparables
         {
             this.legajo = legajo;
             this.promedio = promedio;
-            estrategia = new PorCalificacion();
+            estrategia = new PorPromedio();
         }
         public Alumno(string nombre)
         {
-            estrategia = new PorCalificacion();
+            estrategia = new PorPromedio();
             this.Nombre = nombre;
         }
         public int Legajo
@@ -67,8 +66,7 @@ namespace Patrones_de_Diseño.Comparables
         //----------*ADAPTER*----------//
         public virtual int ResponderPregunta(int pregunta)
         {
-            GeneradorDeDatosAleatorios aux = new GeneradorDeDatosAleatorios();
-            return aux.NumeroAleatorio(1, 3);
+            return GeneradorDeDatosAleatorios.NumeroAleatorio(1, 3);
         }
 
         public string MostrarCalificacion()

@@ -27,7 +27,7 @@ namespace Patrones_de_Diseño.Comparables
 
 		public virtual void Venta(int monto)
 		{
-			Console.WriteLine("El monto recibido es :" + monto + ".");
+			Console.WriteLine(this.Nombre + " realizó una venta de :" + monto + ".\n");
 			GetUltimaventa = monto;
 			this.Notificar();
 		}

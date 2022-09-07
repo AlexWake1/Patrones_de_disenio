@@ -97,7 +97,7 @@ namespace Patrones_de_Diseño.Coleccionable
 		//ITERABLE//
 		public IIterator CrearIterador()
 		{
-			return new IteradorDeListas(pilaLista);
+			return new IteradorDePilas(pilaLista);
 		}
 		//ITERABLE//
 		public void setOrdenInicio(IOrdenEnAula1 OrdenEnAula1)

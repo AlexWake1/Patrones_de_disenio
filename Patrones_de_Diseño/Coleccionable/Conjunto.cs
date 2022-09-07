@@ -26,18 +26,17 @@ namespace Patrones_de_Diseño.Coleccionable
                 lista.Add(x);
 
                 if (lista.Count == 1)
-					if (ordeninicio != null)
-						ordeninicio.Ejecutar();
+                    if (ordeninicio != null)
+                        ordeninicio.Ejecutar();
 
-				if (ordenLlegaAlumno != null)
-					ordenLlegaAlumno.Ejecutar(x);
+                if (ordenLlegaAlumno != null)
+                    ordenLlegaAlumno.Ejecutar(x);
 
-				if (lista.Count == 40)
-					if (ordenAulaLlena != null)
-						ordenAulaLlena.Ejecutar();
-			}
-
-		}
+                if (lista.Count == 40)
+                    if (ordenAulaLlena != null)
+                        ordenAulaLlena.Ejecutar();
+            }
+        }
 		public int Cuantos()
 		{
 			return lista.Count;
