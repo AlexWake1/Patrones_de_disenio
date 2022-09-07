@@ -6,7 +6,7 @@ namespace Patrones_de_Diseño.Factory_method
 	{
         public override iComparable CrearComparable()
 		{
-			return new ClaveValor(aleatorio.NumeroAleatorio(0, 100), Fabrica.CrearComparable(aleatorio.NumeroAleatorio(1, 10)));
+			return new ClaveValor(aleatorio.NumeroAleatorio(0, 20), Fabrica.CrearComparable(3));
 		}
 		public override iComparable CrearComparablePorTeclado()
 		{

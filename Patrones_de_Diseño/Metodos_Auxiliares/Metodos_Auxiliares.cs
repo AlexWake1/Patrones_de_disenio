@@ -37,12 +37,11 @@ namespace Patrones_de_Diseño.Metodos_Auxiliares
             }
             Console.WriteLine();
         }
-        //public void ImprimirElementos(IIterable x)
-        //{
-        //    var impresora = new Impresora();
-
-        //    impresora.Imprimir(x);
-        //}
+        public void ImprimirElementos(IIterable iterable)
+        {
+            var impresora = new Impresora();
+            impresora.Imprimir(iterable);
+        }
         public void CambiarEstrategia(IColeccionable documento, IStrategy_Alumno estrategia)
         {
             IIterator iterador = ((IIterable)documento).CrearIterador();

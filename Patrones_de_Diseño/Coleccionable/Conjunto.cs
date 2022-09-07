@@ -20,11 +20,12 @@ namespace Patrones_de_Diseño.Coleccionable
 		}
 		public void Agregar(iComparable x)
 		{
+
             if (!this.Contiene(x))
             {
-				lista.Add(x);
+                lista.Add(x);
 
-				if (lista.Count == 1)
+                if (lista.Count == 1)
 					if (ordeninicio != null)
 						ordeninicio.Ejecutar();
 
@@ -69,7 +70,7 @@ namespace Patrones_de_Diseño.Coleccionable
 		{
 			foreach (iComparable item in lista)
 			{
-				if (item.Equals(x))
+				if (item.SosIgual(x))
 				{
 					return true;
 				}

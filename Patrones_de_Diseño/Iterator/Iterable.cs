@@ -5,14 +5,14 @@ using System.Linq;
 
 namespace Patrones_de_Diseño.Iterator
 {
-	interface IIterator
+	public interface IIterator
 	{
 		void Primero();
 		void Siguiente();
 		bool Fin();
 		iComparable Actual();
 	}
-	interface IIterable
+	public interface IIterable
 	{
 		IIterator CrearIterador();
 	}
@@ -48,6 +48,7 @@ namespace Patrones_de_Diseño.Iterator
 		IIterator? iterador;
 		public void Imprimir(IIterable documento)
 		{
+			Console.WriteLine(documento);
 			iterador = documento.CrearIterador();
 			while (!iterador.Fin())
 			{

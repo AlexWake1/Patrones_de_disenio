@@ -24,13 +24,13 @@ namespace Patrones_de_Diseño.Coleccionable
 			bool aux1 = false;
 			foreach (ClaveValor item in lista)
 			{
-				if (item.Equals(item))
+				if (item.Clave==((ClaveValor)x).Clave)
 				{
-					item.Valor = (((ClaveValor)x).Valor);
-					//Console.WriteLine("El elemento ha sido modificado en el conjunto");
-					aux1 = true;
-					break;
-				}
+                    item.Valor = ((ClaveValor)x).Valor;
+                    //Console.WriteLine("El elemento ha sido modificado en el conjunto");
+                    aux1 = true;
+                    break;
+                }
 			}
 
 			if (aux1 == false)

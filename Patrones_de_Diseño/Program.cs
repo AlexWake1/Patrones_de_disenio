@@ -1,36 +1,29 @@
 ﻿using Patrones_de_Diseño;
-using Patrones_de_Diseño.Adapter;
 using Patrones_de_Diseño.Coleccionable;
 using Patrones_de_Diseño.Command;
-using Patrones_de_Diseño.Comparables;
-using Patrones_de_Diseño.Decorator;
-using Patrones_de_Diseño.Factory_method;
-using Patrones_de_Diseño.Iterator;
-using Patrones_de_Diseño.Proxy;
-using Patrones_de_Diseño.Strategy;
 using Patrones_de_Diseño.Metodos_Auxiliares;
-using System;
 
-var c1 = new Cola();
-var p1 = new Pila();
-var conj1 = new Conjunto();
-var dic1 = new Diccionario();
 var aula = new Aula();
 var metodos = new Metodos_Auxiliares();
 
-while (true)
+
+bool bucle = true;
+while (bucle)
 {
     Console.Clear();
     var aleatorio = new GeneradorDeDatosAleatorios();
     metodos.Opciones_menu();
     Console.Write("consola> ");
-    int a = int.Parse(Console.ReadLine());
+    int opcion = int.Parse(Console.ReadLine());
 
-    switch (a)
-	{
-		case 1:
+    switch (opcion)
+    {
+        case 1:
             try
             {
+                var cola = new Cola();
+                var pila = new Pila();
+
                 Console.Clear();
                 Console.WriteLine("01-Uso de interfaces");
                 Console.WriteLine("---");
@@ -40,9 +33,9 @@ while (true)
                 Console.WriteLine("---");
                 Console.Write("consola> ");
                 int aux = int.Parse(Console.ReadLine());
-                metodos.Llenar(c1, aux);
+                metodos.Llenar(cola, aux);
 
-                metodos.Informar(c1, aux);
+                metodos.Informar(cola, aux);
                 Console.WriteLine("Presione enter para continuar...");
                 Console.ReadKey();
 
@@ -55,12 +48,11 @@ while (true)
                 Console.WriteLine("---");
                 Console.Write("consola> ");
                 aux = int.Parse(Console.ReadLine());
-                metodos.Llenar(p1, aux);
+                metodos.Llenar(pila, aux);
 
-                metodos.Informar(p1, aux);
+                metodos.Informar(pila, aux);
                 Console.WriteLine("Presione enter para continuar...");
                 Console.ReadKey();
-
             }
             catch (Exception)
             {
@@ -68,8 +60,29 @@ while (true)
                 Console.WriteLine("Algo salió mal");
             }
             break;
+
         case 2:
 
+            Console.Clear();
+            Console.WriteLine("02-Uso de Iterator");
+
+            var cola2 = new Cola();
+            var pila2 = new Pila();
+            var conjunto2 = new Conjunto();
+            var diccionario2 = new Diccionario();
+
+            metodos.Llenar(cola2, 1);
+            metodos.Llenar(pila2, 1);
+            metodos.Llenar(conjunto2, 1);
+            metodos.Llenar(diccionario2, 7);
+
+            metodos.ImprimirElementos(pila2);
+            metodos.ImprimirElementos(cola2);
+            metodos.ImprimirElementos(conjunto2);
+            metodos.ImprimirElementos(diccionario2);
+
+            Console.WriteLine("Presione enter para continuar...");
+            Console.ReadKey();
             break;
         case 3:
 
@@ -102,7 +115,15 @@ while (true)
         default:
             Console.WriteLine("otro numero");
             break;
-	}
+    }
+    Console.WriteLine("Salir s/n");
+    Console.Write("consola> ");
+    string? respuesta = Console.ReadLine();
+    respuesta?.ToLower();
+    if (respuesta=="s")
+    {
+        bucle = false;
+    }
 }
 
 
